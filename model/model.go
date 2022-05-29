@@ -1,8 +1,7 @@
 //Estrutura de dados(struct)
 package model
 
-import "fmt"
-
-func Model() {
-	fmt.Println("Olá mundo!")
+type Person struct {
+	Name string
+	Age  int
 }

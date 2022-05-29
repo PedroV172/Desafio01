@@ -7,9 +7,9 @@ import (
 	"github.com/PedroV172/challenger-algorithm-go/model"
 )
 
-func Person(person []model.Person) []model.Person {
-	sort.Slice(person, func(i, j int) bool {
-		return person[i].Age < person[j].Age
+func OderByAge(list []model.Person) []model.Person {
+	sort.Slice(list, func(i, j int) bool {
+		return list[i].Age < list[j].Age
 	})
-	return person
+	return list
 }

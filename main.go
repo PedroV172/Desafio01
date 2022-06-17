@@ -2,9 +2,9 @@ package main
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 
 	"github.com/PedroV172/challenger-algorithm-desafio/model"
@@ -15,17 +15,17 @@ func main() {
 	list := []model.Person{}
 	fileList, err := os.Open("list_person.json")
 	if err != nil {
-		panic(errors.New("error open file json" + err.Error()))
+		log.Fatal(err)
 	}
 
 	fileListByte, err := ioutil.ReadAll(fileList)
 	if err != nil {
-		panic(errors.New("error convert file in bytes" + err.Error()))
+		log.Fatal(err)
 	}
 
 	err = json.Unmarshal(fileListByte, &list)
 	if err != nil {
-		panic(errors.New("error unmarshal" + err.Error()))
+		log.Fatal(err)
 	}
 
 	for index, person := range person.OderByName(list) {
